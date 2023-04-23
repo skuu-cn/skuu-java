@@ -39,7 +39,7 @@ spring:
 springdoc:
   api-docs:
     enabled: true
-    path: /v3/api-docs
+    path: /v3/cn.skuu.userservice.api-docs
   swagger-ui:
     enabled: true
     path: /swagger-ui
@@ -106,7 +106,7 @@ yudao:
       url: http://dashboard.yudao.iocoder.cn # Admin 管理后台 UI 的地址
   security:
     permit-all_urls:
-      - /admin-api/mp/open/** # 微信公众号开放平台，微信回调接口，不需要登录
+      - /admin-cn.skuu.userservice.api/mp/open/** # 微信公众号开放平台，微信回调接口，不需要登录
   websocket:
     enable: true # websocket的开关
     path: /websocket/message # 路径
@@ -128,23 +128,23 @@ yudao:
     front-type: 10 # 前端模版的类型，参见 CodegenFrontTypeEnum 枚举类
   error-code: # 错误码相关配置项
     constants-class-list:
-      - cn.iocoder.yudao.module.bpm.enums.ErrorCodeConstants
-      - cn.iocoder.yudao.module.infra.enums.ErrorCodeConstants
-      - cn.iocoder.yudao.module.member.enums.ErrorCodeConstants
-      - cn.iocoder.yudao.module.pay.enums.ErrorCodeConstants
-      - cn.iocoder.yudao.module.system.enums.ErrorCodeConstants
-      - cn.iocoder.yudao.module.mp.enums.ErrorCodeConstants
+      - cn.iocoder.yudao.module.bpm.cn.skuu.userservice.api.enums.ErrorCodeConstants
+      - cn.iocoder.yudao.module.infra.cn.skuu.userservice.api.enums.ErrorCodeConstants
+      - cn.iocoder.yudao.module.member.cn.skuu.userservice.api.enums.ErrorCodeConstants
+      - cn.iocoder.yudao.module.pay.cn.skuu.userservice.api.enums.ErrorCodeConstants
+      - cn.iocoder.yudao.module.system.cn.skuu.userservice.api.enums.ErrorCodeConstants
+      - cn.iocoder.yudao.module.mp.cn.skuu.userservice.api.enums.ErrorCodeConstants
   tenant: # 多租户相关配置项
     enable: true
     ignore-urls:
-      - /admin-api/system/tenant/get-id-by-name # 基于名字获取租户，不许带租户编号
-      - /admin-api/system/captcha/get # 获取图片验证码，和租户无关
-      - /admin-api/system/captcha/check # 校验图片验证码，和租户无关
-      - /admin-api/infra/file/*/get/** # 获取图片，和租户无关
-      - /admin-api/system/sms/callback/* # 短信回调接口，无法带上租户编号
-      - /admin-api/pay/notify/callback/* # 支付回调通知，不携带租户编号
+      - /admin-cn.skuu.userservice.api/system/tenant/get-id-by-name # 基于名字获取租户，不许带租户编号
+      - /admin-cn.skuu.userservice.api/system/captcha/get # 获取图片验证码，和租户无关
+      - /admin-cn.skuu.userservice.api/system/captcha/check # 校验图片验证码，和租户无关
+      - /admin-cn.skuu.userservice.api/infra/file/*/get/** # 获取图片，和租户无关
+      - /admin-cn.skuu.userservice.api/system/sms/callback/* # 短信回调接口，无法带上租户编号
+      - /admin-cn.skuu.userservice.api/pay/notify/callback/* # 支付回调通知，不携带租户编号
       - /jmreport/* # 积木报表，无法携带租户编号
-      - /admin-api/mp/open/** # 微信公众号开放平台，微信回调接口，无法携带租户编号
+      - /admin-cn.skuu.userservice.api/mp/open/** # 微信公众号开放平台，微信回调接口，无法携带租户编号
     ignore-tables:
       - system_tenant
       - system_tenant_package

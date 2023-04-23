@@ -1,0 +1,6 @@
+YudaoApiLogAutoConfiguration
+YudaoJacksonAutoConfiguration
+com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration
+YudaoSwaggerAutoConfiguration
+YudaoWebAutoConfiguration
+YudaoXssAutoConfiguration
