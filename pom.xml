@@ -10,10 +10,10 @@
     <modules>
         <module>skuu-dependencies</module>
         <module>skuu-server</module>
-        <module>skuu-framework</module>
-        <module>skuu-user-service</module>
-        <module>skuu-infra-service</module>
-        <module>skuu-system-service</module>
+<!--        <module>skuu-framework</module>-->
+<!--        <module>skuu-user-service</module>-->
+<!--        <module>skuu-infra-service</module>-->
+<!--        <module>skuu-system-service</module>-->
     </modules>
 
     <name>${project.artifactId}</name>

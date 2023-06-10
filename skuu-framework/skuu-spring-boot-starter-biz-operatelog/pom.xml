@@ -5,7 +5,7 @@
     <parent>
         <groupId>cn.skuu</groupId>
         <artifactId>skuu-framework</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>skuu-spring-boot-starter-biz-operatelog</artifactId>
@@ -36,8 +36,8 @@
 
         <!-- 业务组件 -->
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
-            <artifactId>yudao-module-system-api</artifactId> <!-- 需要使用它，进行操作日志的记录 -->
+            <groupId>cn.skuu</groupId>
+            <artifactId>skuu-system-api</artifactId> <!-- 需要使用它，进行操作日志的记录 -->
             <version>${revision}</version>
         </dependency>
 

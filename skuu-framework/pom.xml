@@ -5,10 +5,12 @@
     <parent>
         <artifactId>scaffold</artifactId>
         <groupId>cn.skuu</groupId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>skuu-framework</artifactId>
+
     <modules>
         <module>skuu-common</module>
         <module>skuu-spring-boot-starter-biz-operatelog</module>
@@ -16,7 +18,6 @@
         <module>skuu-spring-boot-starter-banner</module>
         <module>skuu-spring-boot-starter-biz-data-permission</module>
     </modules>
-    <artifactId>skuu-framework</artifactId>
 
     <description>
         该包是技术组件，每个子包，代表一个组件。每个组件包括两部分：
