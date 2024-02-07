@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.skuu</groupId>
-    <artifactId>springboot-2.7.2</artifactId>
+    <artifactId>skuu-java</artifactId>
     <version>1.0.0</version>
-    <name>springboot-2.7.2</name>
+    <name>skuu-java</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>

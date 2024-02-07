@@ -17,7 +17,7 @@ import java.util.List;
 public class CodeGenerator {
 
     private static final DataSourceConfig.Builder DATA_SOURCE_CONFIG = new DataSourceConfig
-            .Builder("jdbc:mysql://ip:port/video_chat?autoReconnect=true&useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false", "", "");
+            .Builder("jdbc:mysql://81.70.44.133:3306/skuu?autoReconnect=true&useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false", "root", "qazse@123");
 
     public static void main(String[] args) {
         FastAutoGenerator.create(DATA_SOURCE_CONFIG)
@@ -25,7 +25,7 @@ public class CodeGenerator {
                 .globalConfig((scanner, builder) -> builder.author(scanner.apply("请输入作者名称？"))
                         .outputDir(System.getProperty("user.dir") + "/src/main/java/"))
                 // 包配置
-                .packageConfig((scanner, builder) -> builder.parent("com.skuu"))
+                .packageConfig((scanner, builder) -> builder.parent("cn.skuu"))
                 // 策略配置
                 .strategyConfig((scanner, builder) -> builder.addInclude(getTables(scanner.apply("请输入表名，多个英文逗号分隔？所有输入 all")))
                         .controllerBuilder().enableRestStyle().enableHyphenStyle()
