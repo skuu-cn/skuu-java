@@ -47,6 +47,9 @@ public class DayHistoryController {
     @GetMapping("/news")
     public ReturnVO<DayHistoryVo> getDayHistory(@RequestParam @Valid @NotBlank String day) throws IOException {
         DayHistory dayHistory = iDayHistoryService.getByDay(day);
+        if (dayHistory == null) {
+            return ReturnVO.ok();
+        }
         DayHistoryVo dayHotVo = new DayHistoryVo()
                 .setDate(dayHistory.getDate())
                 .setCreateTime(dayHistory.getCreateTime())
