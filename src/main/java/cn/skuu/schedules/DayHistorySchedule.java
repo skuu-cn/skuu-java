@@ -1,10 +1,10 @@
 package cn.skuu.schedules;
 
-import cn.skuu.entity.DayHot;
-import cn.skuu.pojo.dto.DayHotData;
-import cn.skuu.pojo.dto.DayHotDto;
-import cn.skuu.pojo.dto.DayHotItem;
-import cn.skuu.service.IDayHotService;
+import cn.skuu.entity.DayHistory;
+import cn.skuu.pojo.dto.DayHistoryData;
+import cn.skuu.pojo.dto.DayHistoryDto;
+import cn.skuu.pojo.dto.DayHistoryItem;
+import cn.skuu.service.IDayHistoryService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,32 +23,32 @@ import java.util.List;
 public class DayHistorySchedule {
 
     @Autowired
-    private IDayHotService iDayHotService;
+    private IDayHistoryService iDayHistoryService;
 
     @Autowired
     private ObjectMapper objectMapper;
 
-        @Scheduled(cron = "0 0 */1 * * ?")
+    @Scheduled(cron = "0 0 */1 * * ?")
 //    @Scheduled(fixedRate = 20000)
     public void scheduledTask() throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "https://open.tophub.today/hot";
-        ResponseEntity<DayHotDto> forEntity = restTemplate.getForEntity(url, DayHotDto.class);
+        String url = "https://open.tophub.today/daily";
+        ResponseEntity<DayHistoryDto> forEntity = restTemplate.getForEntity(url, DayHistoryDto.class);
         if (200 == forEntity.getStatusCode().value()) {
-            DayHotDto body = forEntity.getBody();
-            DayHotData data = body.getData();
+            DayHistoryDto body = forEntity.getBody();
+            DayHistoryData data = body.getData();
             String day = data.getDay().replace("-","");
-            List<DayHotItem> items = data.getItems();
+            List<DayHistoryItem> items = data.getToday_in_history();
             String value = objectMapper.writeValueAsString(items);
-            DayHot dayHotCur = iDayHotService.getByDay(day);
-            if (dayHotCur == null) {
-                DayHot dayHot = new DayHot()
+            DayHistory dayHistoryCur = iDayHistoryService.getByDay(day);
+            if (dayHistoryCur == null) {
+                DayHistory dayHot = new DayHistory()
                         .setDate(day)
                         .setContent(value);
-                iDayHotService.save(dayHot);
+                iDayHistoryService.save(dayHot);
             } else {
-                dayHotCur.setContent(value);
-                iDayHotService.updateById(dayHotCur);
+                dayHistoryCur.setContent(value);
+                iDayHistoryService.updateById(dayHistoryCur);
             }
         }
     }
