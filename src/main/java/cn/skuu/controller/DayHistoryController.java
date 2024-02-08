@@ -34,7 +34,7 @@ import java.util.List;
  */
 @Api(tags = "历史上的今天")
 @RestController
-@RequestMapping("/dayHistory")
+@RequestMapping("/api/dayHistory")
 public class DayHistoryController {
 
     @Autowired
