@@ -46,3 +46,7 @@ spring:
 logging:
   level:
     cn.skuu.mapper: debug
+
+ip2region:
+  enabled: true
+  log: path:/webrtc
