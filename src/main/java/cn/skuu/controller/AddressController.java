@@ -1,9 +1,13 @@
 package cn.skuu.controller;
 
 import cn.skuu.config.Ip2regionSearcher;
+import cn.skuu.entity.IdCardHistory;
 import cn.skuu.pojo.dto.IdDto;
 import cn.skuu.pojo.dto.IpInfoDTO;
 import cn.skuu.pojo.vo.ReturnVO;
+import cn.skuu.service.IIdCardHistoryService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.feiyizhan.idcard.IdCardInfo;
 import io.github.feiyizhan.idcard.IdCardUtils;
 import io.swagger.annotations.Api;
@@ -33,6 +37,12 @@ public class AddressController {
     @Autowired
     private Ip2regionSearcher ip2regionSearcher;
 
+    @Autowired
+    private IIdCardHistoryService iIdCardHistoryService;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Operation(summary = "地址信息")
     @PostMapping("/address")
     public ReturnVO<IpInfoDTO> address(@RequestBody @Valid @NotBlank IpInfoDTO ipInfoDTO) {
@@ -43,8 +53,12 @@ public class AddressController {
 
     @Operation(summary = "id信息")
     @PostMapping("/id")
-    public ReturnVO<IdCardInfo> id(@RequestBody @Valid @NotBlank IdDto idDto) {
+    public ReturnVO<IdCardInfo> id(@RequestBody @Valid @NotBlank IdDto idDto) throws JsonProcessingException {
         IdCardInfo idCardInfo = IdCardUtils.getIdCardInfo(idDto.getId());
+        IdCardHistory idCardHistory = new IdCardHistory()
+                .setIdCard(idDto.getId())
+                .setIdCardInfo(objectMapper.writeValueAsString(idCardInfo));
+        iIdCardHistoryService.save(idCardHistory);
         return ReturnVO.ok(idCardInfo);
     }
 }
