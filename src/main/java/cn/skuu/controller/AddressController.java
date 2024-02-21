@@ -9,6 +9,7 @@ import cn.skuu.pojo.dto.IpInfoDTO;
 import cn.skuu.pojo.vo.ReturnVO;
 import cn.skuu.service.IIdCardHistoryService;
 import cn.skuu.service.IIpInfoService;
+import cn.skuu.util.IpUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.feiyizhan.idcard.IdCardInfo;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
@@ -54,9 +56,15 @@ public class AddressController {
 
     @Operation(summary = "ip信息")
     @PostMapping("/ip")
-    public ReturnVO<IpInfoDTO> ip(@RequestBody @Valid @NotBlank IpInfoDTO ipInfoDTO) {
+    public ReturnVO<IpInfoDTO> ip(HttpServletRequest request, @RequestBody @Valid @NotBlank IpInfoDTO ipInfoDTO) {
         String ip = ipInfoDTO.getIp();
+        if ("local".equalsIgnoreCase(ip)) {
+            ip = IpUtils.getIpAddr(request);
+        }
         IpInfoDTO ipInfo = ip2regionSearcher.getIpInfo(ip);
+        if (ipInfo == null) {
+            return ReturnVO.ok();
+        }
         IpInfo info = ipInfoAdapter.ipInfoDTO2Entity(ipInfo);
         iIpInfoService.save(info);
         return ReturnVO.ok(ipInfo);
