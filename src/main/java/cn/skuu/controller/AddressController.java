@@ -1,11 +1,14 @@
 package cn.skuu.controller;
 
+import cn.skuu.adapter.IpInfoAdapter;
 import cn.skuu.config.Ip2regionSearcher;
 import cn.skuu.entity.IdCardHistory;
+import cn.skuu.entity.IpInfo;
 import cn.skuu.pojo.dto.IdDto;
 import cn.skuu.pojo.dto.IpInfoDTO;
 import cn.skuu.pojo.vo.ReturnVO;
 import cn.skuu.service.IIdCardHistoryService;
+import cn.skuu.service.IIpInfoService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.feiyizhan.idcard.IdCardInfo;
@@ -43,11 +46,19 @@ public class AddressController {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Operation(summary = "地址信息")
-    @PostMapping("/address")
-    public ReturnVO<IpInfoDTO> address(@RequestBody @Valid @NotBlank IpInfoDTO ipInfoDTO) {
+    @Autowired
+    private IpInfoAdapter ipInfoAdapter;
+
+    @Autowired
+    private IIpInfoService iIpInfoService;
+
+    @Operation(summary = "ip信息")
+    @PostMapping("/ip")
+    public ReturnVO<IpInfoDTO> ip(@RequestBody @Valid @NotBlank IpInfoDTO ipInfoDTO) {
         String ip = ipInfoDTO.getIp();
         IpInfoDTO ipInfo = ip2regionSearcher.getIpInfo(ip);
+        IpInfo info = ipInfoAdapter.ipInfoDTO2Entity(ipInfo);
+        iIpInfoService.save(info);
         return ReturnVO.ok(ipInfo);
     }
 
