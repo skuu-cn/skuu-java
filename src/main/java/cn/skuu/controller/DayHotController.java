@@ -33,7 +33,7 @@ import java.util.List;
  */
 @Api(tags = "每日热点")
 @RestController
-@RequestMapping("/skuu/api/dayHot")
+@RequestMapping("/api/dayHot")
 public class DayHotController {
 
     @Autowired

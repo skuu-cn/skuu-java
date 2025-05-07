@@ -36,7 +36,7 @@ import javax.validation.constraints.NotBlank;
  */
 @Api(tags = "查询")
 @RestController
-@RequestMapping("/skuu/api")
+@RequestMapping("/api")
 public class AddressController {
 
     @Autowired
