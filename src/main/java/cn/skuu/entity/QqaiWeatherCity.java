@@ -65,5 +65,5 @@ public class QqaiWeatherCity implements Serializable {
     /**
      * lon，经度
      */
-    private String long;
+    private String lon;
 }
