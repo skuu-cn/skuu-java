@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.skuu.mapper.QqaiCityMapper">
+
+    <select id="getRefreshCityVos" resultType="cn.skuu.pojo.vo.RefreshCityVo">
+        SELECT t1.id, t1.name, t2.id as ad_code
+        from qqai_city t1
+                 LEFT JOIN skuu_city t2 on t1.`name` = t2.`name` and t1.`level` + 1 = t2.type;
+    </select>
+</mapper>

@@ -17,7 +17,7 @@ import java.util.List;
 public class CodeGenerator {
 
     private static final DataSourceConfig.Builder DATA_SOURCE_CONFIG = new DataSourceConfig
-            .Builder("jdbc:mysql://81.70.44.133:3306/skuu?autoReconnect=true&useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false", "root", "qazse@123");
+            .Builder("jdbc:mysql://127.0.0.1:3306/skuu?autoReconnect=true&useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false", "root", "1122");
 
     public static void main(String[] args) {
         FastAutoGenerator.create(DATA_SOURCE_CONFIG)
