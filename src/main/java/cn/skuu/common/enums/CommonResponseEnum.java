@@ -1,6 +1,6 @@
 package cn.skuu.common.enums;
 
-public enum CommonResponseEnum {
+public enum CommonResponseEnum implements JsonEnum{
     ERROR(-1, "失败"),
     SUCCESS(200, "成功"),
     UNAUTHORIZED(401, "未授权"),

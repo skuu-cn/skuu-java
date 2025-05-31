@@ -1,13 +1,13 @@
 package cn.skuu.controller;
 
-import cn.skuu.pojo.vo.UserCallStatusVo;
 import cn.skuu.entity.User;
 import cn.skuu.enums.CallStatusEnum;
 import cn.skuu.enums.StatusEnum;
 import cn.skuu.pojo.vo.ReturnVO;
+import cn.skuu.pojo.vo.UserCallStatusVo;
 import cn.skuu.service.IUserService;
 import io.swagger.annotations.Api;
-import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +34,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @Operation(summary = "获取视频通话状态")
+    @ApiOperation(value = "获取视频通话状态")
     @GetMapping("/call-status")
     public ReturnVO<UserCallStatusVo> getUserIno(@RequestParam @Valid @NotBlank String userId) {
         User user = userService.getUser(userId);

@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.feiyizhan.idcard.IdCardInfo;
 import io.github.feiyizhan.idcard.IdCardUtils;
 import io.swagger.annotations.Api;
-import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,7 +54,7 @@ public class AddressController {
     @Autowired
     private IIpInfoService iIpInfoService;
 
-    @Operation(summary = "ip信息")
+    @ApiOperation(value = "ip信息")
     @PostMapping("/ip")
     public ReturnVO<IpInfoDTO> ip(HttpServletRequest request, @RequestBody @Valid @NotBlank IpInfoDTO ipInfoDTO) {
         String ip = ipInfoDTO.getIp();
@@ -70,7 +70,7 @@ public class AddressController {
         return ReturnVO.ok(ipInfo);
     }
 
-    @Operation(summary = "id信息")
+    @ApiOperation(value = "id信息")
     @PostMapping("/id")
     public ReturnVO<IdCardInfo> id(@RequestBody @Valid @NotBlank IdDto idDto) throws JsonProcessingException {
         IdCardInfo idCardInfo = IdCardUtils.getIdCardInfo(idDto.getId());

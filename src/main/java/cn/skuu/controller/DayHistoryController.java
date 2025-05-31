@@ -2,16 +2,13 @@ package cn.skuu.controller;
 
 import cn.skuu.entity.DayHistory;
 import cn.skuu.pojo.dto.DayHistoryItem;
-import cn.skuu.pojo.dto.DayHotItem;
 import cn.skuu.pojo.vo.DayHistoryVo;
-import cn.skuu.pojo.vo.DayHotVo;
 import cn.skuu.pojo.vo.ReturnVO;
-import cn.skuu.pojo.vo.UserCallStatusVo;
 import cn.skuu.service.IDayHistoryService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
-import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,7 +40,7 @@ public class DayHistoryController {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Operation(summary = "历史上的今天")
+    @ApiOperation(value = "历史上的今天")
     @GetMapping("/news")
     public ReturnVO<DayHistoryVo> getDayHistory(@RequestParam @Valid @NotBlank String day) throws IOException {
         DayHistory dayHistory = iDayHistoryService.getByDay(day);

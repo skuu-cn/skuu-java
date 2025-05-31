@@ -1,6 +1,7 @@
 package cn.skuu.service;
 
 import cn.skuu.entity.QqaiWeatherCity;
+import cn.skuu.pojo.dto.GPSDto;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -15,4 +16,5 @@ public interface IQqaiWeatherCityService extends IService<QqaiWeatherCity> {
 
     QqaiWeatherCity getByAdCode(Integer adCode);
 
+    QqaiWeatherCity getByGPS(GPSDto gpsDto);
 }

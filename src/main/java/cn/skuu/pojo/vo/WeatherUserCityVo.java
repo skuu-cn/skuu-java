@@ -1,26 +1,27 @@
-package cn.skuu.entity;
+package cn.skuu.pojo.vo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+
+import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author dcx
- * @since 2025-05-26
+ * @since 2025-05-31
  */
-@Getter
-@Setter
-@TableName("qqai_weather_city")
-public class QqaiWeatherCity implements Serializable {
+@Data
+public class WeatherUserCityVo {
 
-    private static final long serialVersionUID = 1L;
+    private Integer id;
 
-    private String id;
+    private Integer userId;
+
+    private Integer cityId;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 
     /**
      * 地区编码
@@ -60,10 +61,10 @@ public class QqaiWeatherCity implements Serializable {
     /**
      * lat，纬度
      */
-    private Double lat;
+    private String lat;
 
     /**
      * lon，经度
      */
-    private Double lon;
+    private String lon;
 }

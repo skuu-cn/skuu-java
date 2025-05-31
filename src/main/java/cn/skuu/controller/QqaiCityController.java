@@ -1,15 +1,12 @@
 package cn.skuu.controller;
 
-import cn.skuu.pojo.vo.DayHotVo;
 import cn.skuu.pojo.vo.ReturnVO;
 import cn.skuu.service.IQqaiCityService;
-import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import java.io.IOException;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -26,7 +23,7 @@ public class QqaiCityController {
     @Autowired
     private IQqaiCityService iQqaiCityService;
 
-    @Operation(summary = "更新城市编码")
+    @ApiOperation(value = "更新城市编码")
     @PostMapping("/refreshAdCode")
     public ReturnVO<Boolean> refreshAdCode() {
         iQqaiCityService.refreshAdCode();

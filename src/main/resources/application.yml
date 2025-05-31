@@ -42,6 +42,25 @@ spring:
         # 连接池中的最小空闲连接 默认 0
         min-idle: 0
 
+knife4j:
+  enable: true
+  openapi:
+    title: qqai官方文档
+    description: qqai
+    email: qqai@foxmail.com
+    concat: qqai
+    url: https://docs.xiaominfo.com
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      test1:
+        group-name: 分组名称
+        api-rule: package
+        api-rule-resources:
+          - cn.skuu.controller
+
 #mybatis-plus配置控制台打印完整带参数SQL语句
 logging:
   level:

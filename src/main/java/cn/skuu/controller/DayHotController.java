@@ -4,18 +4,16 @@ import cn.skuu.entity.DayHot;
 import cn.skuu.pojo.dto.DayHotItem;
 import cn.skuu.pojo.vo.DayHotVo;
 import cn.skuu.pojo.vo.ReturnVO;
-import cn.skuu.pojo.vo.UserCallStatusVo;
 import cn.skuu.service.IDayHotService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
-import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -42,11 +40,11 @@ public class DayHotController {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Operation(summary = "每日热点")
+    @ApiOperation(value = "每日热点")
     @GetMapping("/news")
     public ReturnVO<DayHotVo> getDayHot(@RequestParam @Valid @NotBlank String date) throws IOException {
         DayHot dayHot = iDayHotService.getByDay(date);
-        if (dayHot == null){
+        if (dayHot == null) {
             return ReturnVO.ok();
         }
         DayHotVo dayHotVo = new DayHotVo()
