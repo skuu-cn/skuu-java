@@ -1,6 +1,6 @@
 package cn.skuu.adapter;
 
-import cn.skuu.entity.IpInfo;
+import cn.skuu.entity.IpInfoDO;
 import cn.skuu.pojo.dto.IpInfoDTO;
 import org.mapstruct.Mapper;
 
@@ -11,5 +11,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface IpInfoAdapter {
 
-    IpInfo ipInfoDTO2Entity(IpInfoDTO ipInfo);
+    IpInfoDO ipInfoDTO2Entity(IpInfoDTO ipInfo);
 }

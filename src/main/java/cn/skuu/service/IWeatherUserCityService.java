@@ -1,6 +1,6 @@
 package cn.skuu.service;
 
-import cn.skuu.entity.WeatherUserCity;
+import cn.skuu.entity.WeatherUserCityDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author dcx
  * @since 2025-05-31
  */
-public interface IWeatherUserCityService extends IService<WeatherUserCity> {
+public interface IWeatherUserCityService extends IService<WeatherUserCityDO> {
 
 }

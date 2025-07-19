@@ -1,6 +1,6 @@
 package cn.skuu.service;
 
-import cn.skuu.entity.IdCardHistory;
+import cn.skuu.entity.IdCardHistoryDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author dcx
  * @since 2024-02-21
  */
-public interface IIdCardHistoryService extends IService<IdCardHistory> {
+public interface IIdCardHistoryService extends IService<IdCardHistoryDO> {
 
 }

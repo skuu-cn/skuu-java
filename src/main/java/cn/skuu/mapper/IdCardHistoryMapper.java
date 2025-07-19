@@ -1,6 +1,6 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.IdCardHistory;
+import cn.skuu.entity.IdCardHistoryDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author dcx
  * @since 2024-02-21
  */
-public interface IdCardHistoryMapper extends BaseMapper<IdCardHistory> {
+public interface IdCardHistoryMapper extends BaseMapper<IdCardHistoryDO> {
 
 }

@@ -1,6 +1,6 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.WeatherUserCity;
+import cn.skuu.entity.WeatherUserCityDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author dcx
  * @since 2025-05-31
  */
-public interface WeatherUserCityMapper extends BaseMapper<WeatherUserCity> {
+public interface WeatherUserCityMapper extends BaseMapper<WeatherUserCityDO> {
 
 }

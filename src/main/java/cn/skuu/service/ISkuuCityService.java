@@ -1,6 +1,6 @@
 package cn.skuu.service;
 
-import cn.skuu.entity.SkuuCity;
+import cn.skuu.entity.SkuuCityDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -13,8 +13,8 @@ import java.util.List;
  * @author dcx
  * @since 2025-05-25
  */
-public interface ISkuuCityService extends IService<SkuuCity> {
+public interface ISkuuCityService extends IService<SkuuCityDO> {
 
-    List<SkuuCity> selectByNameAndType(String name, int type);
+    List<SkuuCityDO> selectByNameAndType(String name, int type);
 
 }

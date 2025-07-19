@@ -1,7 +1,7 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.QqaiWeatherCity;
-import cn.skuu.pojo.dto.GPSDto;
+import cn.skuu.entity.QqaiWeatherCityDO;
+import cn.skuu.pojo.dto.GPSDTO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,7 +13,7 @@ import org.apache.ibatis.annotations.Param;
  * @author dcx
  * @since 2025-05-26
  */
-public interface QqaiWeatherCityMapper extends BaseMapper<QqaiWeatherCity> {
+public interface QqaiWeatherCityMapper extends BaseMapper<QqaiWeatherCityDO> {
 
-    QqaiWeatherCity getByGPS(@Param("gpsDto") GPSDto gpsDto);
+    QqaiWeatherCityDO getByGPS(@Param("gpsDto") GPSDTO gpsDto);
 }

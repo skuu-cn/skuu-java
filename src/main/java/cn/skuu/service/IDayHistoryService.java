@@ -1,6 +1,6 @@
 package cn.skuu.service;
 
-import cn.skuu.entity.DayHistory;
+import cn.skuu.entity.DayHistoryDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author dcx
  * @since 2024-02-07
  */
-public interface IDayHistoryService extends IService<DayHistory> {
+public interface IDayHistoryService extends IService<DayHistoryDO> {
 
-    DayHistory getByDay(String day);
+    DayHistoryDO getByDay(String day);
 }

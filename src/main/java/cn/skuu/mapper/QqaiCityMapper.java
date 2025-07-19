@@ -1,9 +1,8 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.QqaiCity;
+import cn.skuu.entity.QqaiCityDO;
 import cn.skuu.pojo.vo.RefreshCityVo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ import java.util.List;
  * @author dcx
  * @since 2025-05-25
  */
-public interface QqaiCityMapper extends BaseMapper<QqaiCity> {
+public interface QqaiCityMapper extends BaseMapper<QqaiCityDO> {
 
     List<RefreshCityVo> getRefreshCityVos();
 }

@@ -1,6 +1,6 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.DayHot;
+import cn.skuu.entity.DayHotDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author dcx
  * @since 2024-02-07
  */
-public interface DayHotMapper extends BaseMapper<DayHot> {
+public interface DayHotMapper extends BaseMapper<DayHotDO> {
 
 }

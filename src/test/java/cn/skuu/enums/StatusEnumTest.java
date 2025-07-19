@@ -1,5 +1,6 @@
 package cn.skuu.enums;
 
+import cn.skuu.constant.enums.StatusEnum;
 import org.junit.jupiter.api.Test;
 
 class StatusEnumTest {

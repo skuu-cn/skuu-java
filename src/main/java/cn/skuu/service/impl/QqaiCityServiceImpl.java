@@ -1,11 +1,9 @@
 package cn.skuu.service.impl;
 
-import cn.skuu.entity.QqaiCity;
-import cn.skuu.entity.SkuuCity;
+import cn.skuu.entity.QqaiCityDO;
 import cn.skuu.mapper.QqaiCityMapper;
 import cn.skuu.pojo.vo.RefreshCityVo;
 import cn.skuu.service.IQqaiCityService;
-import cn.skuu.service.ISkuuCityService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +19,7 @@ import java.util.List;
  * @since 2025-05-25
  */
 @Service
-public class QqaiCityServiceImpl extends ServiceImpl<QqaiCityMapper, QqaiCity> implements IQqaiCityService {
+public class QqaiCityServiceImpl extends ServiceImpl<QqaiCityMapper, QqaiCityDO> implements IQqaiCityService {
 
 
     @Autowired
@@ -32,16 +30,16 @@ public class QqaiCityServiceImpl extends ServiceImpl<QqaiCityMapper, QqaiCity> i
         List<RefreshCityVo> refreshCityVos = qqaiCityMapper.getRefreshCityVos();
         for (RefreshCityVo refreshCityVo : refreshCityVos) {
             Integer id = refreshCityVo.getId();
-            QqaiCity qqaiCity = getById(id);
-            qqaiCity.setAdCode(refreshCityVo.getAdCode());
-            updateById(qqaiCity);
+            QqaiCityDO qqaiCityDO = getById(id);
+            qqaiCityDO.setAdCode(refreshCityVo.getAdCode());
+            updateById(qqaiCityDO);
         }
 
     }
 
     @Override
-    public QqaiCity getById(Integer id) {
+    public QqaiCityDO getById(Integer id) {
         return lambdaQuery()
-                .eq(QqaiCity::getId, id).one();
+                .eq(QqaiCityDO::getId, id).one();
     }
 }
