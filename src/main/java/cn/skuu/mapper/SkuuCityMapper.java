@@ -1,6 +1,6 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.SkuuCity;
+import cn.skuu.entity.SkuuCityDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author dcx
  * @since 2025-05-25
  */
-public interface SkuuCityMapper extends BaseMapper<SkuuCity> {
+public interface SkuuCityMapper extends BaseMapper<SkuuCityDO> {
 
 }

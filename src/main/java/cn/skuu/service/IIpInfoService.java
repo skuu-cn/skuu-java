@@ -1,6 +1,6 @@
 package cn.skuu.service;
 
-import cn.skuu.entity.IpInfo;
+import cn.skuu.entity.IpInfoDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author dcx
  * @since 2024-02-21
  */
-public interface IIpInfoService extends IService<IpInfo> {
+public interface IIpInfoService extends IService<IpInfoDO> {
 
 }

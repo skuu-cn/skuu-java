@@ -1,6 +1,6 @@
 package cn.skuu.service;
 
-import cn.skuu.entity.DayHot;
+import cn.skuu.entity.DayHotDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author dcx
  * @since 2024-02-07
  */
-public interface IDayHotService extends IService<DayHot> {
+public interface IDayHotService extends IService<DayHotDO> {
 
-    DayHot getByDay(String day);
+    DayHotDO getByDay(String day);
 }

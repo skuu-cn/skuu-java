@@ -1,6 +1,6 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.IpInfo;
+import cn.skuu.entity.IpInfoDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author dcx
  * @since 2024-02-21
  */
-public interface IpInfoMapper extends BaseMapper<IpInfo> {
+public interface IpInfoMapper extends BaseMapper<IpInfoDO> {
 
 }

@@ -1,7 +1,7 @@
 package cn.skuu;
 
 import cn.skuu.common.enums.CommonResponseEnum;
-import cn.skuu.entity.WeatherUserCity;
+import cn.skuu.entity.WeatherUserCityDO;
 import cn.skuu.pojo.vo.ReturnVO;
 import cn.skuu.service.IWeatherUserCityService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -23,7 +23,7 @@ class SkuuApplicationTests {
 
     @Test
     void contextLoads() throws JsonProcessingException {
-        List<WeatherUserCity> list = iWeatherUserCityService.list();
+        List<WeatherUserCityDO> list = iWeatherUserCityService.list();
         System.out.println(objectMapper.writeValueAsString(list));
 //        String s = objectMapper.writeValueAsString(CommonResponseEnum.ERROR);
         System.out.println(ReturnVO.ok(CommonResponseEnum.SUCCESS));

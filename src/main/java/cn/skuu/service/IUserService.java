@@ -2,7 +2,7 @@ package cn.skuu.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import cn.skuu.entity.User;
+import cn.skuu.entity.UserDO;
 
 /**
  * <p>
@@ -12,8 +12,8 @@ import cn.skuu.entity.User;
  * @author dcx
  * @since 2022-08-28
  */
-public interface IUserService extends IService<User> {
+public interface IUserService extends IService<UserDO> {
 
-    User getUser(String userId);
+    UserDO getUser(String userId);
 
 }

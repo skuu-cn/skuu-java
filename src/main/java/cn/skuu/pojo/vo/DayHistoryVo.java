@@ -1,6 +1,6 @@
 package cn.skuu.pojo.vo;
 
-import cn.skuu.pojo.dto.DayHistoryItem;
+import cn.skuu.pojo.dto.DayHistoryItemDTO;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -33,7 +33,7 @@ public class DayHistoryVo implements Serializable {
     /**
      * 内容
      */
-    private List<DayHistoryItem> items;
+    private List<DayHistoryItemDTO> items;
 
     /**
      * 创建时间

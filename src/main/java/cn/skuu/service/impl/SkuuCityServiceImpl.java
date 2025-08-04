@@ -1,6 +1,6 @@
 package cn.skuu.service.impl;
 
-import cn.skuu.entity.SkuuCity;
+import cn.skuu.entity.SkuuCityDO;
 import cn.skuu.mapper.SkuuCityMapper;
 import cn.skuu.service.ISkuuCityService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -17,12 +17,12 @@ import java.util.List;
  * @since 2025-05-25
  */
 @Service
-public class SkuuCityServiceImpl extends ServiceImpl<SkuuCityMapper, SkuuCity> implements ISkuuCityService {
+public class SkuuCityServiceImpl extends ServiceImpl<SkuuCityMapper, SkuuCityDO> implements ISkuuCityService {
 
     @Override
-    public List<SkuuCity> selectByNameAndType(String name, int type) {
-       return lambdaQuery().eq(SkuuCity::getName,name)
-                .eq(SkuuCity::getType,type)
+    public List<SkuuCityDO> selectByNameAndType(String name, int type) {
+       return lambdaQuery().eq(SkuuCityDO::getName,name)
+                .eq(SkuuCityDO::getType,type)
                 .list();
     }
 }

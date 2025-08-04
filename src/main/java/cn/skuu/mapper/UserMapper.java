@@ -1,6 +1,6 @@
 package cn.skuu.mapper;
 
-import cn.skuu.entity.User;
+import cn.skuu.entity.UserDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author dcx
  * @since 2022-08-28
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<UserDO> {
 
 }

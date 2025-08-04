@@ -1,6 +1,6 @@
 package cn.skuu.service;
 
-import cn.skuu.entity.QqaiCity;
+import cn.skuu.entity.QqaiCityDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,9 +11,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author dcx
  * @since 2025-05-25
  */
-public interface IQqaiCityService extends IService<QqaiCity> {
+public interface IQqaiCityService extends IService<QqaiCityDO> {
 
     void refreshAdCode();
 
-    QqaiCity getById(Integer id);
+    QqaiCityDO getById(Integer id);
 }
