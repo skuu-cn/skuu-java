@@ -2,6 +2,7 @@ package cn.skuu.util;
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.Arrays;
@@ -23,13 +24,14 @@ public class CodeGenerator {
         FastAutoGenerator.create(DATA_SOURCE_CONFIG)
                 // 全局配置
                 .globalConfig((scanner, builder) -> builder.author(scanner.apply("请输入作者名称？"))
-                        .outputDir(System.getProperty("user.dir") + "/src/main/java/"))
+                        .outputDir(System.getProperty("user.dir") + "/src/main/java/").enableSwagger())
                 // 包配置
-                .packageConfig((scanner, builder) -> builder.parent("cn.skuu"))
+                .packageConfig((scanner, builder) -> builder.parent("cn.skuu").pathInfo(Collections.singletonMap(OutputFile.xml, "src/main/resources")) // 设置路径配置信息
+                        .xml("mapper"))
                 // 策略配置
                 .strategyConfig((scanner, builder) -> builder.addInclude(getTables(scanner.apply("请输入表名，多个英文逗号分隔？所有输入 all")))
                         .controllerBuilder().enableRestStyle().enableHyphenStyle()
-                        .entityBuilder().enableLombok()
+                        .entityBuilder().enableLombok().enableFileOverride()
                 )
                 .templateEngine(new FreemarkerTemplateEngine())
                 /*

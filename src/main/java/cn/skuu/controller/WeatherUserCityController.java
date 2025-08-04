@@ -34,7 +34,7 @@ public class WeatherUserCityController {
     @Autowired
     private IQqaiWeatherCityService iQqaiWeatherCityService;
 
-     @ApiOperation(value = "详情列表")
+    @ApiOperation(value = "详情列表")
     @GetMapping("/detail-list")
     public ReturnVO<List<QqaiWeatherCity>> detailList() {
         List<WeatherUserCity> list = iWeatherUserCityService.list();
